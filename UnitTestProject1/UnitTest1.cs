@@ -61,10 +61,14 @@ namespace UnitTestProject1
             {
                 //Assert
                 StringAssert.Contains(e.Message, BankAccount.DebitamountExceedsBalanceMessage);
+                return;
             }
+
+            Assert.Fail("The excepted exception was not thrown.");
 
            
         }
+
 
         
 
