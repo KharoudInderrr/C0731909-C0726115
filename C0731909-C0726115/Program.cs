@@ -49,7 +49,7 @@ namespace C0731909_C0726115
                 {
                     throw new ArgumentOutOfRangeException("amount");
                 }
-                m_balance += amount;
+                m_balance -= amount;
 
 
             }
