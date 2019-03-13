@@ -43,7 +43,7 @@ namespace UnitTestProject1
             
         }
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        
         public void Debit_WhenAmountIsMoreThanBalance_ShouldThrowArgumentOutOfRange()
         {
             // Arrange
