@@ -48,15 +48,25 @@ namespace UnitTestProject1
         {
             // Arrange
             double beginningBalance = 11.99;
-            double debitAmount = 100.00;
+            double debitAmount = 20.0;
             BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
 
             //Act
-            account.Debit(debitAmount);
+            try
+            {
+                account.Debit(debitAmount);
+            }
 
-            //Assert is handled by the ExpectedException  attribute on the test method
-            
+            catch (ArgumentOutOfRangeException e)
+            {
+                //Assert
+                StringAssert.Contains(e.Message, BankAccount.DebitamountExceedsBalanceMessage);
+            }
+
+           
         }
+
+        
 
 
 
