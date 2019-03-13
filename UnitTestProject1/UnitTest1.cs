@@ -1,5 +1,5 @@
 ﻿using System;
-using C0731909_C0726115;
+using Bankaccounts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject1
@@ -22,6 +22,27 @@ namespace UnitTestProject1
             //Assert
             double actual = account.Balance;
             Assert.AreEqual(expected, actual, 0.01, "Account not debited correctly");
+
+             [TestMethod]
+             [ExpectedException(typeof(ArgumentOutOfRangeException))]
+             public void Debit_WhenAmountIsLessThanZero_ShouldThrowArgumentOutOfRange()
+        {
+            // Arrange
+            double beginningBalance = 11.99;
+            double debitAmount = -100.00;
+            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+
+            //Act
+            account.Debit(debitAmount);
+
+            //Assert is handled by the ExpectedException  attribute on the test method
+
+
+
+            
+        }
+
+
 
         }
     }
